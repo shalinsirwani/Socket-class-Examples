@@ -1,0 +1,25 @@
+Java Socket(InetAddress addr,int port,InetAddress localAddr,int localPort) constructor
+--------------------------------------------------------------------------------------
+
+Syntax:- public Socket(InetAddress addr,int port,InetAddress localAddr,int localPort)throw IOException
+
+Example:-
+
+import java.net.InetAddress;
+import java.net.Socket;
+import java.io.DataOutputStream;
+
+public class s_3
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			InetAddress ia=InetAddress.getLocalHost();
+			int port=9999;
+			Socket s=new Socket(ia,port,InetAddress.getLocalHost(),99);
+			DataOutputStream dis=new DataOutputStream(s.getOutputStream());
+			dis.writeUTF("ddjgdj");
+		}catch(Exception e){System.out.println(e);}
+	}
+}

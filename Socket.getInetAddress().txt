@@ -1,0 +1,19 @@
+Java Socket.getInetAddress()
+
+Syntax:- public InetAddress getInetAddress()
+
+Example:- 
+
+import java.net.Socket;
+import java.io.DataOutputStream;
+
+public class Main {
+  public static void main(String[] args) throws Exception {
+    Socket s = new Socket("localhost", 9999);
+    DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+    dout.writeUTF("hello HP");
+    s.close();
+    System.out.println(s.getInetAddress());
+    s.close();
+  }
+}

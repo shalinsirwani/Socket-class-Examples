@@ -1,0 +1,29 @@
+Java Socket.connect(SocketAddress endpoint)
+Syntax
+
+syntax:-
+public void connect(SocketAddress endpoint)  throws IOException
+
+Example:-
+
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.io.DataOutputStream;
+
+
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    InetAddress addr = InetAddress.getLocalHost();
+    int port = 9999;
+    SocketAddress sockaddr = new InetSocketAddress(addr, port);
+	
+    Socket s = new Socket();
+
+    s.connect(sockaddr);
+    DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+    dout.writeUTF("hello HP");
+    s.close();
+  }
+}

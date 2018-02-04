@@ -1,0 +1,23 @@
+Java Socket(String host,int port,InetAddress localAddr,int localPort)constructor
+
+Syntax:- public Socket(String host,int port,InetAddress localAddr,int localPort);
+
+Example:-
+
+import java.net.InetAddress;
+import java.net.Socket;
+
+public calss s6
+{
+	public class static void main(String[] args)
+	{	
+		try
+		{
+			int port=9999;
+			Socket s = new Socket("localhost",port,InetAddress.getLocalHost(),99);
+			DataOutputStream dis = new DataOutputStream(s.getOutputStream());
+			dis.writeUTF("jzdxgfkjl"); 
+			s.close();			
+		}catch(Exception e){System.out.println(e);}
+	}
+}

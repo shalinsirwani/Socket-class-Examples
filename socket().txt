@@ -1,0 +1,33 @@
+Java Socket Class constructor
+------------------------------
+
+Default constructor
+--------------------
+
+syntax:- public Socket();
+
+Example
+
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.DataOutputStream;
+
+public class Main
+{
+	public static void main(String[] args)
+	{ 
+		try
+		{
+		InetAddress ia = InetAddress.getLocalHost();
+		int port = 9999;
+		SocketAddress sa = new InetSocketAddress(ia,port);
+		Socket s = new Socket();
+		s.connect(sa);
+		DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+		dout.writeUTF("hello HP");
+		s.close();
+		}catch(Exception e){System.out.println(e);} 
+	}
+}

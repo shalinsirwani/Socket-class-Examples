@@ -1,0 +1,26 @@
+Java Socket(InetAddress address,int port) constructor
+------------------------------------------------------
+
+Syntax:- Socket parametrised constructor from Socket has the following syntax.
+
+public Socket(InetAddress address,int port);
+
+Example:-
+
+import java.net.InetAddress;
+import java.net.Socket;
+import java.io.DataOutputStream;
+
+public class s_2
+{
+	public static void main(String[] args)
+	{
+		try{
+		InetAddress addr=InetAddress.getLocalHost();
+		int port=9999;
+		Socket s = new Socket(addr,port);
+		DataOutputStream dis = new DataOutputStream(s.getOutputStream());
+		dis.writeUTF("shadfh");
+		}catch(Exception e){System.out.println(e);}
+	}
+}

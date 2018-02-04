@@ -1,0 +1,28 @@
+Java Socket.connect(SocketAddress endpoint, int timeout)
+
+
+Syntax:- public void connect(SocketAddress endpoint,  int timeout)  throws IOException
+
+Example:-
+
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.io.DataOutputStream;
+
+public class Main {
+  public static void main(String[] argv) throws Exception {
+    InetAddress addr = InetAddress.getLocalHost();
+    int port = 9999;
+    SocketAddress sockaddr = new InetSocketAddress(addr, port);
+
+    Socket s = new Socket();
+
+    int timeout = 8000; // 8 seconds
+    s.connect(sockaddr, timeout);
+    DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+    dout.writeUTF("hello HP");
+    s.close();
+  }
+}

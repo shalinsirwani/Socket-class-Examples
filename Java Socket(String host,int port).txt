@@ -1,0 +1,23 @@
+Java Socket(String host,int port) Comstructor
+---------------------------------------------
+
+Syntax:- Socket(String host,int port)thorws UnKnownHostException,IOException
+
+Example:-
+
+import java.net.Socket;
+import java.io.DataOutputStream;
+
+public class s5
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			Socket s = new Socket("localhost",9999);
+			DataOutputStream dis = new DataOutputStream(s.getOutputStream());
+			dis.writeUTF("hdgsj");
+			s.close();
+		}catch(Exception e){System.out.println(e);}
+	}
+} 

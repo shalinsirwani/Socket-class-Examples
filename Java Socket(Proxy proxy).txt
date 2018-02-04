@@ -1,0 +1,20 @@
+Java Socket(Proxy proxy) Constructor
+-----------------------------------
+
+Syntax:- public Socket(Proxy proxy);
+
+Example:-
+
+import java.net.Proxy;
+import java.net.Socket;
+import java.io.DataOutputStream;
+
+public class s4
+{
+	public static void main(String[] args)
+	try
+	{
+		Proxy proxy = Proxy.NO_PROXY;
+		Socket socket = new Socket(proxy);
+	}
+}
